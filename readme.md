@@ -4,3 +4,7 @@ Multimedia Designer & Visual Storyteller | I help creative teams and brands expr
 
 Rol: Gestor
 Located in Villapinzon cundinamarca
+### Nombre: Fabian Ruiz
+### Rol: Developer
+### Ubicación: Villavicencio, Meta
+### Perfil: Productor Multimedia, 23 años, trabajo como productor multimedia para empresas así como cubrimiento de eventos sociales... Trabajo en el sector desde el 2022

@@ -1,6 +1,6 @@
 ## Hello, I'm Wyatt
 
-![Wyatt](profile.png)
+![Wyatt](Wyatt/profile.png)
 
 **Multimedia Designer & Visual Storyteller**
 

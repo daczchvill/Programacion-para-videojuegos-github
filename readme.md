@@ -1,9 +1,9 @@
 # Nombre del Grupo: 15 zorros encantadores
 
-## Hello, I´m Wyatt
+### Nombre: Wyatt
 ![Wyatt](Wyatt/profile.png)
 
-**Wyatt Contreras Multimedia Designer & Visual Storyteller**
+**Hello, I´m Wyatt Multimedia Designer & Visual Storyteller**
 
 I help creative teams and brands express emotion through animation, storytelling, and web.
 

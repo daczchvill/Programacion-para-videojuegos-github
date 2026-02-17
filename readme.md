@@ -1,3 +1,5 @@
+# Nombre del Grupo: 15 zorros encantadores
+
 ## Hello, I´m Wyatt
 ![Wyatt](Wyatt/profile.png)
 
@@ -11,7 +13,6 @@ Evocative, handmade aesthetics that connect deeply with audiences.
 
 **Role:** Gestor, 2D animator.
 **Location:** Villapinzón, Cundinamarca, Colombia
-# Nombre del Grupo: 15 zorros encantadores
 
 ### Nombre: Fabian Ruiz
 ![Fabian](Fabian/Perfil-Esteban.jpg)

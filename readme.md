@@ -1,5 +1,17 @@
 ![Fabian](Fabian/Perfil-Esteban.jpg)
 
+![Wyatt](Wyatt/profile.png)
+
+**Multimedia Designer & Visual Storyteller**
+
+I help creative teams and brands express emotion through animation, storytelling, and web.
+
+Evocative, handmade aesthetics that connect deeply with audiences.
+
+---
+
+**Role:** Gestor, 2D animator.
+**Location:** Villapinzón, Cundinamarca, Colombia
 # Nombre del Grupo: 15 zorros encantadores
 
 ### Nombre: Fabian Ruiz

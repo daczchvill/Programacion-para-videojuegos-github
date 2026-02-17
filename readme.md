@@ -1,4 +1,4 @@
-## Hello, I'm Wyatt
+Hello, I'm Wyatt
 
 ![Wyatt](Wyatt/profile.png)
 

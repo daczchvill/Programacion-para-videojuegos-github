@@ -10,7 +10,7 @@ Evocative, handmade aesthetics that connect deeply with audiences.
 
 ---
 
-**Role:** Gestor  
+**Role:** Gestor, 2D animator.
 **Location:** Villapinzón, Cundinamarca, Colombia
 
 ### Nombre: Fabian Ruiz

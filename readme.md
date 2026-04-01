@@ -10,3 +10,9 @@
 ### Rol: Developer
 ### Ubicación: Villavicencio, Meta
 ### Perfil: Productor Multimedia, 23 años, trabajo como productor multimedia para empresas así como cubrimiento de eventos sociales... Trabajo en el sector desde el 2022 y me gusta el 3D
+
+### Nombre: Melchisedek Pérez
+![Melchisedek]()
+### Rol: Diseñador Gráfico y Modelado 3d
+### Ubicación: Girardot, Cundinamarca
+### Perfil: Soy Ingeniero Industrial y terminando la Ingenieria Multimedia. Trabajo en el SENA desde hace ya 19 años y con experiencia como Instructor de Contenidos Digitales. 

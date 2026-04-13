@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        
     }
 
     void Update()
@@ -37,8 +38,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-
-            animator.SetBool("isJumping", true);
+            animator.SetTrigger("Jump");
             isGrounded = false;
         }
     }

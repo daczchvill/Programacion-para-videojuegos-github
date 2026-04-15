@@ -1,11 +1,20 @@
 using UnityEngine;
+using System.Collections;
 
 public class Sinking : MonoBehaviour
 {
-    public float sinkDelay = 2f; // tiempo antes de hundirse
-    public float sinkSpeed = 1f; // velocidad de hundimiento
+    public float sinkDelay = 2f;
+    public float sinkSpeed = 1f;
 
     private bool isTriggered = false;
+    private Vector3 startPosition;
+    private Coroutine sinkCoroutine;
+
+    void Start()
+    {
+        // Guardar posición inicial
+        startPosition = transform.position;
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -18,16 +27,33 @@ public class Sinking : MonoBehaviour
 
     void StartSinking()
     {
-        // mejorar con animaciones
-        StartCoroutine(Sink());
+        sinkCoroutine = StartCoroutine(Sink());
     }
 
-    System.Collections.IEnumerator Sink()
+    IEnumerator Sink()
     {
         while (true)
         {
-            transform.position += new Vector3(0, -sinkSpeed * Time.deltaTime, 0);
+            transform.position += Vector3.down * sinkSpeed * Time.deltaTime;
             yield return null;
         }
+    }
+
+    // 🔁 NUEVA FUNCIÓN PARA REINICIAR
+    public void ResetPlatform()
+    {
+        // detener hundimiento
+        if (sinkCoroutine != null)
+        {
+            StopCoroutine(sinkCoroutine);
+        }
+
+        CancelInvoke();
+
+        // resetear estado
+        isTriggered = false;
+
+        // volver a posición inicial
+        transform.position = startPosition;
     }
 }

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
-        // Guardar posición inicial
+        // Save initial Position
         startPosition = transform.position;
     }
 
@@ -33,10 +33,10 @@ public class PlayerController : MonoBehaviour
         float moveForward = Input.GetAxis("Vertical");   // W/S
         float rotate = Input.GetAxis("Horizontal");      // A/D
 
-        // 🔁 Rotación sobre eje Y
+        // Rotation Y axis
         transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.deltaTime);
 
-        // ⏩ Movimiento hacia adelante según dirección
+        // Movement forward
         Vector3 movement = transform.forward * moveForward * moveSpeed;
 
         rb.linearVelocity = new Vector3(movement.x, rb.linearVelocity.y, movement.z);
@@ -73,5 +73,13 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = Vector3.zero;
         transform.position = startPosition;
+
+        // Restart all sinking platforms
+        Sinking[] platforms = FindObjectsOfType<Sinking>();
+
+        foreach (Sinking platform in platforms)
+        {
+            platform.ResetPlatform();
+        }
     }
 }

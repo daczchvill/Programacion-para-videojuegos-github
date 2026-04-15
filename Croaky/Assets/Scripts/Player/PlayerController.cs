@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
+    public float rotationSpeed = 200f;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -25,10 +26,14 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
+        float moveForward = Input.GetAxis("Vertical");   // W/S
+        float rotate = Input.GetAxis("Horizontal");      // A/D
 
-        Vector3 movement = new Vector3(moveX, 0, moveZ) * moveSpeed;
+        // 🔁 ROTACIÓN (gira sobre su eje Y)
+        transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.deltaTime);
+
+        // ⏩ MOVIMIENTO hacia adelante según hacia donde mira
+        Vector3 movement = transform.forward * moveForward * moveSpeed;
 
         rb.linearVelocity = new Vector3(movement.x, rb.linearVelocity.y, movement.z);
     }

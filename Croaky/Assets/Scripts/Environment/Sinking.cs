@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Sinking : MonoBehaviour
 {
-    public float sinkDelay = 2f;
-    public float sinkSpeed = 1f;
+    public float sinkDelay = 1f;
+    public float sinkSpeed = 2f;
 
     private bool isTriggered = false;
     private Vector3 startPosition;
@@ -12,7 +12,7 @@ public class Sinking : MonoBehaviour
 
     void Start()
     {
-        // Guardar posición inicial
+        // save initial position
         startPosition = transform.position;
     }
 
@@ -39,10 +39,10 @@ public class Sinking : MonoBehaviour
         }
     }
 
-    // 🔁 NUEVA FUNCIÓN PARA REINICIAR
+    // new function to reset the platform
     public void ResetPlatform()
     {
-        // detener hundimiento
+        // stopp sinking if it's currently sinking
         if (sinkCoroutine != null)
         {
             StopCoroutine(sinkCoroutine);
@@ -50,10 +50,10 @@ public class Sinking : MonoBehaviour
 
         CancelInvoke();
 
-        // resetear estado
+        // reestart trigger
         isTriggered = false;
 
-        // volver a posición inicial
+        // go to initial position
         transform.position = startPosition;
     }
 }

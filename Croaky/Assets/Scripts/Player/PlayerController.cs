@@ -110,5 +110,13 @@ public class PlayerController : MonoBehaviour
 
         gridPosition = startPosition;
         transform.position = startPosition;
+
+        // Reiniciar plataformas hundibles
+        Sinking[] platforms = FindObjectsOfType<Sinking>();
+
+        foreach (Sinking platform in platforms)
+        {
+            platform.ResetPlatform();
+        }
     }
 }

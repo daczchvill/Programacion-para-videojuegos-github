@@ -30,26 +30,26 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude1: 0.047
-    - _Amplitude2: 0.044
+    - _Amplitude2: 0.08
     - _Amplitude3: 0.08
     - _FoamIntensity: 0.66
     - _FoamScale: 10
-    - _Frequency1: 0.39
-    - _Frequency2: 0.17
-    - _Frequency3: 1.02
+    - _Frequency1: 0.7
+    - _Frequency2: 1
+    - _Frequency3: 0.7
     - _FresnelPower: 3.77
     - _SeaLevel: 0
-    - _Speed1: 0.37
-    - _Speed2: 0
-    - _Speed3: 0.16
-    - _Transparency: 1
+    - _Speed1: 0.8
+    - _Speed2: 0.7
+    - _Speed3: 0.7
+    - _Transparency: 0.94
     m_Colors:
-    - _DeepColor: {r: 0.8, g: 0.67801166, b: 0, a: 1}
+    - _DeepColor: {r: 0.34531865, g: 0.754717, b: 0.4940245, a: 1}
     - _Direction1: {r: 1, g: 0, b: 0, a: 0}
     - _Direction2: {r: 0, g: 1, b: 0, a: 0}
     - _Direction3: {r: 0.7, g: 0.7, b: 0, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FresnelColor: {r: 0.19339621, g: 1, b: 0.8761724, a: 1}
-    - _ShallowColor: {r: 0.3058473, g: 0.745283, b: 0.42647675, a: 1}
+    - _FresnelColor: {r: 0.8867924, g: 0.850601, b: 0.16313636, a: 1}
+    - _ShallowColor: {r: 0.17417233, g: 0.3584906, b: 0.22518897, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

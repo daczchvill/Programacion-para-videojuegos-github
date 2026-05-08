@@ -28,13 +28,13 @@ public class CrocodileTrigger : MonoBehaviour
 
     IEnumerator EatPlayer(GameObject player)
     {
-        // Esperar mordida
+        // wait bite
         yield return new WaitForSeconds(0.6f);
 
-        // Ocultar rana
+        // hide player
         player.SetActive(false);
 
-        // Esperar final animación
+        // wait crocodile animation
         yield return new WaitForSeconds(0.65f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

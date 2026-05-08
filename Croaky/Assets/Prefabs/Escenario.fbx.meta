@@ -3,7 +3,147 @@ guid: 66ada43a9dce649e49daa8e2bd6346d2
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GGP04E_Pelakauskas_Juozas_MAIN_Plant_Water
+    second: {fileID: 2100000, guid: 638635befff004a498204d0b20e827f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GGP04E_Pelakauskas_Juozas_MAIN_Tree_Birch
+    second: {fileID: 2100000, guid: 8af7dbbb5de2847be87955525fb9d814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GGP04E_Pelakauskas_Juozas_MAIN_Tree_Birch_Leaves
+    second: {fileID: 2100000, guid: 1bd92b8a0f5c54f6885f4e6973fcb1d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GGP04E_Pelakauskas_Juozas_MAIN_Tree_Pine
+    second: {fileID: 2100000, guid: 9076ad245560b4ef1931219e694a0f4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Healthy_Grass
+    second: {fileID: 2100000, guid: f896b7c747b6b42718fc7c44f636a04a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Healthy_Grass.001
+    second: {fileID: 2100000, guid: d8b89b16a3643491c81527ca482c3866, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 78998a8524d154b0d92e7b4ab83be67d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 309ba24d626e14d58aec41dedecd56f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 2405c256f540e4e02a21e743fe76757b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: b337c4804fb1a409e80dbd67dbb4887d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 9c4346f548e81486e9404f7f9a09b748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 70680bf553aaa48b986d7847d75b3399, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 936e411e60d9140bfbc36496db3b48fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree
+    second: {fileID: 2100000, guid: 1ee49236e66d64d8a959d7a69fc8e056, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree.015
+    second: {fileID: 2100000, guid: 778ac981fa9ae4f449595de82bc76b75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water
+    second: {fileID: 2100000, guid: e67382d55b1c74dce8ac103fa9f88ed2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water.001
+    second: {fileID: 2100000, guid: ad059b1dd89f843d3989e7ec26ce112f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water.002
+    second: {fileID: 2100000, guid: c14e8191790544ce8a07102fe0bbece1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water.003
+    second: {fileID: 2100000, guid: 184fb81ec06664a8689c839e415584b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arbol con hojas
+    second: {fileID: 2100000, guid: c8cf531d52944423e8ebd0f3f5d338be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass
+    second: {fileID: 2100000, guid: 7adf39dc806a64caa984b95baa46179c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hojas___
+    second: {fileID: 2100000, guid: 48144e462106f4497aec3a99eabe9be2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: a5ac2e83212fb43b0b65173c223a1b96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: troncou
+    second: {fileID: 2100000, guid: 51d7e129e60084226990495b0326781b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: troncou.001
+    second: {fileID: 2100000, guid: b38f02f045299472a80095df2e1c0422, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: troncou.002
+    second: {fileID: 2100000, guid: 08ff3c98b4dc94b6ea9ce2522776c28e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: troncou.003
+    second: {fileID: 2100000, guid: 02579fe6eb2244df2b6c91ca94f7b563, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: troncou.004
+    second: {fileID: 2100000, guid: d8200a118ecba43048b3516ace895af5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

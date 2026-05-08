@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 
 
-        // 🔲 Alinear al grid desde el inicio
+        // allign to grid at start
         gridPosition = SnapToGrid(transform.position);
         transform.position = gridPosition;
 
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         float time = 0;
 
-        // 🔁 Rotación hacia donde salta
+        // rotation to where is jumping
         transform.forward = direction;
 
         animator.SetTrigger("Jump");
@@ -66,10 +66,10 @@ public class PlayerController : MonoBehaviour
         {
             float t = time / jumpDuration;
 
-            // Movimiento horizontal
+            // horizontal movement
             Vector3 pos = Vector3.Lerp(start, end, t);
 
-            // Arco del salto
+            // vertical jump using sine wave
             float height = Mathf.Sin(t * Mathf.PI) * jumpHeight;
 
             transform.position = pos + Vector3.up * height;
@@ -78,14 +78,14 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        // 🔲 SNAP FINAL LIMPIO
+        // snap final open
         gridPosition = SnapToGrid(end);
         transform.position = gridPosition;
 
         isMoving = false;
     }
 
-    // 🔲 Función clave: alinear al grid
+    // allign grid position to tile size
     Vector3 SnapToGrid(Vector3 pos)
     {
         float x = Mathf.Round(pos.x / tileSize) * tileSize;
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         return new Vector3(x, pos.y, z);
     }
 
-    // 💧 Si toca agua → reinicio
+    // water is bad
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water"))
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         gridPosition = startPosition;
         transform.position = startPosition;
 
-        // Reiniciar plataformas hundibles
+        // reestart sinking platforms
         Sinking[] platforms = FindObjectsOfType<Sinking>();
 
         foreach (Sinking platform in platforms)

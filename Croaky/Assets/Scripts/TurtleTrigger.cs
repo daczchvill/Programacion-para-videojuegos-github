@@ -29,13 +29,13 @@ public class TurtleTrigger : MonoBehaviour
 
     IEnumerator EatPlayer(GameObject player)
     {
-        // Esperar mordida
+        // wait bite
         yield return new WaitForSeconds(0.9f);
 
-        // Ocultar rana
+        // hide player
         player.SetActive(false);
 
-        // Esperar final animación
+        // wait turtle animation
         yield return new WaitForSeconds(.4f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

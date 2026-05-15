@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float jumpHeight = 1.5f;
     public float jumpDuration = 0.4f;
     public float tileSize = 3f;
+    public int vida = 3;
 
     private bool isMoving = false;
     private Vector3 startPosition;
@@ -105,6 +107,15 @@ public class PlayerController : MonoBehaviour
 
     void ResetPlayer()
     {
+
+        vida = Mathf.Max(vida - 1, 0);
+
+        if (vida <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            return;
+        }
+
         StopAllCoroutines();
         isMoving = false;
 

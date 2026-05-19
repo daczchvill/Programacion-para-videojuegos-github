@@ -1,54 +1,122 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 7f;
+    public float jumpHeight = 1.5f;
+    public float jumpDuration = 0.4f;
+    public float tileSize = 3f;
+
+    private bool isMoving = false;
+    private Vector3 startPosition;
+    private Vector3 gridPosition;
 
     private Rigidbody rb;
-    private bool isGrounded;
-
     private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        
+
+
+        // allign to grid at start
+        gridPosition = SnapToGrid(transform.position);
+        transform.position = gridPosition;
+
+        startPosition = gridPosition;
     }
 
     void Update()
     {
-        Move();
-        Jump();
-    }
+        if (isMoving) return;
 
-    void Move()
-    {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
+        Vector3 dir = Vector3.zero;
 
-        Vector3 movement = new Vector3(moveX, 0, moveZ) * moveSpeed;
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+            dir = Vector3.forward;
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+            dir = Vector3.back;
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            dir = Vector3.left;
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+            dir = Vector3.right;
 
-        rb.linearVelocity = new Vector3(movement.x, rb.linearVelocity.y, movement.z);
-    }
-
-    void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (dir != Vector3.zero)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            animator.SetTrigger("Jump");
-            isGrounded = false;
+            StartCoroutine(Jump(dir));
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    IEnumerator Jump(Vector3 direction)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        isMoving = true;
+
+        Vector3 start = gridPosition;
+        Vector3 end = start + direction * tileSize;
+
+        float time = 0;
+
+        // rotation to where is jumping
+        transform.forward = direction;
+
+        animator.SetTrigger("Jump");
+
+        while (time < jumpDuration)
         {
-            isGrounded = true;
-            animator.SetBool("isJumping", false);
+            float t = time / jumpDuration;
+
+            // horizontal movement
+            Vector3 pos = Vector3.Lerp(start, end, t);
+
+            // vertical jump using sine wave
+            float height = Mathf.Sin(t * Mathf.PI) * jumpHeight;
+
+            transform.position = pos + Vector3.up * height;
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        // snap final open
+        gridPosition = SnapToGrid(end);
+        transform.position = gridPosition;
+
+        isMoving = false;
+    }
+
+    // allign grid position to tile size
+    Vector3 SnapToGrid(Vector3 pos)
+    {
+        float x = Mathf.Round(pos.x / tileSize) * tileSize;
+        float z = Mathf.Round(pos.z / tileSize) * tileSize;
+
+        return new Vector3(x, pos.y, z);
+    }
+
+    // water is bad
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            ResetPlayer();
+        }
+    }
+
+    void ResetPlayer()
+    {
+        StopAllCoroutines();
+        isMoving = false;
+
+        gridPosition = startPosition;
+        transform.position = startPosition;
+
+        // reestart sinking platforms
+        Sinking[] platforms = FindObjectsOfType<Sinking>();
+
+        foreach (Sinking platform in platforms)
+        {
+            platform.ResetPlatform();
         }
     }
 }

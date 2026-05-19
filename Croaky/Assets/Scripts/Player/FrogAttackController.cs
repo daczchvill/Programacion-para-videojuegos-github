@@ -14,6 +14,18 @@ public class FrogAttackController : MonoBehaviour
     public float tongueSpeed = 20f;   
     private bool isAttackingWithTongue = false;
 
+
+    [Header("Configuración de Sonido")]
+    public AudioClip slimeSound; // Aquí arrastras el archivo de audio
+    private AudioSource audioSource;
+
+
+    void Start()
+    {
+        // Obtenemos el componente Audio Source al iniciar
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -29,6 +41,12 @@ public class FrogAttackController : MonoBehaviour
 
     void LanzarBaba()
     {
+        // Reproducir el sonido antes o después de instanciar
+        if (audioSource != null && slimeSound != null)
+        {
+            audioSource.PlayOneShot(slimeSound);
+        }
+        
         GameObject ball = Instantiate(slimeBallPrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = ball.GetComponent<Rigidbody>();
         if (rb != null)

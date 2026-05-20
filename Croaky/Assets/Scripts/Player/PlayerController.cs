@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
 
         startPosition = gridPosition;
     }
+    public void SetCheckpoint(Vector3 newCheckpoint)
+{
+    startPosition = SnapToGrid(newCheckpoint);
+}
 
     void Update()
     {
@@ -103,7 +107,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ResetPlayer()
+    public void ResetPlayer()
     {
         StopAllCoroutines();
         isMoving = false;

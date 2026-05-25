@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
         startPosition = gridPosition;
     }
+    public void SetCheckpoint(Vector3 newCheckpoint)
+{
+    startPosition = SnapToGrid(newCheckpoint);
+}
 
     void Update()
     {
@@ -54,8 +58,8 @@ public class PlayerController : MonoBehaviour
     {
         isMoving = true;
 
-        Vector3 start = gridPosition;
-        Vector3 end = start + direction * tileSize;
+        Vector3 start = SnapToGrid(transform.position);
+        Vector3 end = SnapToGrid(start + direction * tileSize);
 
         float time = 0;
 
@@ -84,6 +88,8 @@ public class PlayerController : MonoBehaviour
         gridPosition = SnapToGrid(end);
         transform.position = gridPosition;
 
+        transform.forward = Vector3.forward;
+
         isMoving = false;
     }
 
@@ -105,7 +111,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ResetPlayer()
+    public void ResetPlayer()
     {
 
         vida = Mathf.Max(vida - 1, 0);

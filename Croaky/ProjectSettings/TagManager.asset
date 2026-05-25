@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Ground
   - Water
-  - AtaqueRana
-  - "Ara\xF1a"
   layers:
   - Default
   - TransparentFX

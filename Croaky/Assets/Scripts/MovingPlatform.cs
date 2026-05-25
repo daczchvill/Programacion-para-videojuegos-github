@@ -2,21 +2,37 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Vector3 moveDirection = Vector3.right;
-    public float moveDistance = 6f;
-    public float moveSpeed = .3f;
+    public Transform pointA;
+    public Transform pointB;
 
-    private Vector3 startPosition;
+    public float moveSpeed = 2f;
+
+    private Vector3 target;
 
     void Start()
     {
-        startPosition = transform.position;
+        target = pointB.position;
     }
 
     void Update()
     {
-        transform.position = startPosition +
-            moveDirection * Mathf.Sin(Time.time * moveSpeed) * moveDistance;
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            target,
+            moveSpeed * Time.deltaTime
+        );
+
+        if (Vector3.Distance(transform.position, target) < 0.01f)
+        {
+            if (target == pointB.position)
+            {
+                target = pointA.position;
+            }
+            else
+            {
+                target = pointB.position;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,4 +50,13 @@ public class MovingPlatform : MonoBehaviour
             collision.transform.SetParent(null);
         }
     }
+
+    private void OnDrawGizmos()
+{
+    if (pointA != null && pointB != null)
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(pointA.position, pointB.position);
+    }
+}
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CrocodileTrigger : MonoBehaviour
@@ -37,6 +36,28 @@ public class CrocodileTrigger : MonoBehaviour
         // wait crocodile animation
         yield return new WaitForSeconds(0.65f);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // obtener player controller
+        PlayerController playerController = player.GetComponent<PlayerController>();
+
+        // mostrar rana otra vez
+        player.SetActive(true);
+
+        // volver a activar físicas
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
+
+        // activar controller otra vez
+        playerController.enabled = true;
+
+        // reset al checkpoint
+        playerController.ResetPlayer();
+
+        // reiniciar animación cocodrilo
+        crocodileAnimator.ResetTrigger("Attack");
+        crocodileAnimator.Play("idle cocodrilo");
     }
 }

@@ -23,3 +23,12 @@ ExportedObj/
 *.VC.db
 
 /[Ll]ibrary/
+[Librería Unity]
+Library/
+Temp/
+Obj/
+Logs/
+MemoryCaptures/
+Build/
+Builds/
+UserSettings/

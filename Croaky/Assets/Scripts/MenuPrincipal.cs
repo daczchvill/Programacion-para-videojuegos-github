@@ -1,62 +1,63 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required to change scenes
+using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 using UnityEngine.Audio;
 
-public class MainMenu : MonoBehaviour
+public class MenuPrincipal : MonoBehaviour
 {
-    public AudioMixer masterMixer; 
-    private bool Silence = false;
+    public AudioMixer masterMixer; // Arrastra aquí tu MasterMixer
+    private bool estaSilenciado = false;
 
-    // This variable will store a reference to the panel
-    public GameObject Instructions; 
+    // Esta variable guardará la referencia a tu panel
+    public GameObject Instrucciones; 
 
-    // Function to display the tutorial
-    public void InInstructions()
+    // Función para mostrar el tutorial
+    public void AbrirInstrucciones()
     {
-        Instructions.SetActive(true);
+        Instrucciones.SetActive(true);
     }
 
-    // Function to hide the tutorial
-    public void OutInstructions()
+    // Función para ocultar el tutorial
+    public void CerrarInstrucciones()
     {
-        Instructions.SetActive(false);
+        Instrucciones.SetActive(false);
     }
 
 
-    public void Changesounds()
+    public void AlternarSonido()
     {
-        Silence = !Silence;
+        estaSilenciado = !estaSilenciado;
 
-        if (Silence)
+        if (estaSilenciado)
         {
-            // -80 decibels is complete silence in Unity
+            // -80 decibelios es silencio total en Unity
             masterMixer.SetFloat("MyExposedVolume", -80f);
         }
         else
         {
-            // 0 decibels is the normal volume
+            // 0 decibelios es el volumen normal
             masterMixer.SetFloat("MyExposedVolume", 0f);
         }
     }
 
-    public void Quality(int indice)
+    public void CambiarCalidad(int indice)
 {
-    // Change the graphics engine quality level
+    // Cambia el nivel de calidad del motor gráfico
     QualitySettings.SetQualityLevel(indice);
     
-    Debug.Log("Level Quality: " + indice);
+    Debug.Log("Calidad cambiada a nivel: " + indice);
 }
 
 
-    public void Play()
+    public void Jugar()
     {
-        // Load your game scene. Make sure the name matches.
+        // Carga la escena de tu juego. Asegúrate de que el nombre coincida.
+        // En tu caso, según image_ea5f61.png, tu escena se llama "Croaky".
         SceneManager.LoadScene("Croaky");
     }
 
-    public void Out()
+    public void Salir()
     {
-        Debug.Log("Exiting the game...");
-        Application.Quit(); // This works in the exported game (.exe)
+        Debug.Log("Saliendo del juego...");
+        Application.Quit(); // Esto funciona en el juego exportado (.exe)
     }
 }

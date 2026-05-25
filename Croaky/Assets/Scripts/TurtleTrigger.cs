@@ -1,6 +1,4 @@
-
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class TurtleTrigger : MonoBehaviour
@@ -19,25 +17,46 @@ public class TurtleTrigger : MonoBehaviour
                 rb.isKinematic = true;
             }
 
-            other.GetComponent<PlayerController>().enabled = false;
+            PlayerController playerController =
+                other.GetComponent<PlayerController>();
+
+            playerController.enabled = false;
 
             turtleAnimator.SetTrigger("attack");
 
-            StartCoroutine(EatPlayer(other.gameObject));
+            StartCoroutine(EatPlayer(other.gameObject, playerController));
         }
     }
 
-    IEnumerator EatPlayer(GameObject player)
+    IEnumerator EatPlayer(GameObject player, PlayerController playerController)
     {
-        // wait bite
+        // esperar animación
         yield return new WaitForSeconds(0.9f);
 
-        // hide player
+        // ocultar rana
         player.SetActive(false);
 
-        // wait turtle animation
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(0.4f);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // volver a mostrar rana
+        player.SetActive(true);
+
+        // volver a activar físicas
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
+
+        // activar controller otra vez
+        playerController.enabled = true;
+
+        // respawn en checkpoint
+        playerController.ResetPlayer();
+
+        // reiniciar animación tortuga
+        turtleAnimator.ResetTrigger("attack");
+        turtleAnimator.Play("idle tortuga");
     }
 }

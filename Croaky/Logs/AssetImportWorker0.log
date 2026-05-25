@@ -798,3 +798,67 @@ Received Import Request.
 Start importing Assets/Scripts/Player/PlayerController.cs using Guid(0d01ffe7f4d704f6ca6bc136b1ee9d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e22749c163cca32d60481a6d6778c0cb') in 0.1278844 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
+========================================================================
+Received Import Request.
+  Time since last request: 1299.691190 seconds.
+  path: Assets/vainas importadas/Banner_menu.png
+  artifactKey: Guid(633e1490c0373f5418e769541508378b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/vainas importadas/Banner_menu.png using Guid(633e1490c0373f5418e769541508378b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '994a04c73b481f20f1e1bf0befc381df') in 2.1583598 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001590 seconds.
+  path: Assets/vainas importadas/imagen_araña.png
+  artifactKey: Guid(279e8fe955f948841a6f47bb9c10fdd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/vainas importadas/imagen_araña.png using Guid(279e8fe955f948841a6f47bb9c10fdd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73fb91842ae9de9b8b7de2b95db0f360') in 0.0871231 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.174824 seconds.
+  path: Assets/vainas importadas/imagen_araña.png
+  artifactKey: Guid(279e8fe955f948841a6f47bb9c10fdd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/vainas importadas/imagen_araña.png using Guid(279e8fe955f948841a6f47bb9c10fdd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e3a03bb3d1862b4b792be6a3dc514b2') in 0.0624778 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 942.063761 seconds.
+  path: Assets/Croaky.unity
+  artifactKey: Guid(56e2143d9b7ec324a9d17b937876279e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Croaky.unity using Guid(56e2143d9b7ec324a9d17b937876279e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd583b6d4d11b2571b038aec704c26937') in 0.0708617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 90.224646 seconds.
+  path: Assets/Menu.unity
+  artifactKey: Guid(9ca6c888a359a604e8a010bca246bd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Menu.unity using Guid(9ca6c888a359a604e8a010bca246bd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41e35ab3e96a63c11fce9c5bd93966ef') in 0.0548823 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 246.442680 seconds.
+  path: Assets/vainas importadas/imagen_cocodrilo.png
+  artifactKey: Guid(4fe6e3dabcf984a48ab5bd66772b4d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/vainas importadas/imagen_cocodrilo.png using Guid(4fe6e3dabcf984a48ab5bd66772b4d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b33e373eae3ba48c5704e191e40db489') in 0.3377014 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.756772 seconds.
+  path: Assets/vainas importadas/imagen_cocodrilo.png
+  artifactKey: Guid(4fe6e3dabcf984a48ab5bd66772b4d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/vainas importadas/imagen_cocodrilo.png using Guid(4fe6e3dabcf984a48ab5bd66772b4d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f094cc4f6125352193c6b62ff76b948e') in 0.1010092 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.936323 seconds.
+  path: Assets/vainas importadas/imagen_tortuga.png
+  artifactKey: Guid(09109a4e11b848c458ef85fbd4a3bc3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/vainas importadas/imagen_tortuga.png using Guid(09109a4e11b848c458ef85fbd4a3bc3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b533025e803799ec6054f7213226054') in 0.068463 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+

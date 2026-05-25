@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour
     {
         isMoving = true;
 
-        Vector3 start = gridPosition;
-        Vector3 end = start + direction * tileSize;
+        Vector3 start = SnapToGrid(transform.position);
+        Vector3 end = SnapToGrid(start + direction * tileSize);
 
         float time = 0;
 
@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
         // snap final open
         gridPosition = SnapToGrid(end);
         transform.position = gridPosition;
+
+        transform.forward = Vector3.forward;
 
         isMoving = false;
     }

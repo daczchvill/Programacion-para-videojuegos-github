@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
         gridPosition = SnapToGrid(end);
         transform.position = gridPosition;
 
-        transform.forward = Vector3.forward;
+        //transform.forward = Vector3.forward;
 
         isMoving = false;
     }

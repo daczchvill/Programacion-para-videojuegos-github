@@ -11,7 +11,7 @@ public class BarraVida : MonoBehaviour
     private float vidaMaxima;
     void Start()
     {
-       playerController = GameObject.Find("frog").GetComponent<PlayerController>();
+       playerController = GameObject.Find("frog (NO MOVER Y 0.396)").GetComponent<PlayerController>();
         vidaMaxima = playerController.vida;
     }
 

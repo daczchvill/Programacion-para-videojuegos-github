@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.5f;
     public float jumpDuration = 0.4f;
     public float tileSize = 3f;
-    public int vida = 3;
+    public int vida = 10;
 
     private bool isMoving = false;
     private Vector3 startPosition;
@@ -16,10 +16,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
 
+    public AudioClip jumpSound;
+    public AudioClip deathSound;
+    public AudioClip waterSound;
+    private AudioSource audioSource;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
 
 
         // allign to grid at start
@@ -67,6 +75,7 @@ public class PlayerController : MonoBehaviour
         transform.forward = direction;
 
         animator.SetTrigger("Jump");
+        audioSource.PlayOneShot(jumpSound);
 
         while (time < jumpDuration)
         {
@@ -107,6 +116,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Water"))
         {
+            audioSource.PlayOneShot(waterSound);
+
             ResetPlayer();
         }
     }
@@ -118,7 +129,12 @@ public class PlayerController : MonoBehaviour
 
         if (vida <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            audioSource.Stop();
+
+            audioSource.PlayOneShot(deathSound);
+
+            StartCoroutine(RestartAfterGameOver());
+
             return;
         }
 
@@ -135,5 +151,12 @@ public class PlayerController : MonoBehaviour
         {
             platform.ResetPlatform();
         }
+    }
+
+    IEnumerator RestartAfterGameOver()
+    {
+        yield return new WaitForSeconds(deathSound.length);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
